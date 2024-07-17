@@ -162,11 +162,11 @@ async function run() {
 
         app.patch('/users/mobile/:mobileNumber', async (req, res) => {
             const mobileNumber = req.params.mobileNumber;
-            const { balance } = req.body;
+            const { money } = req.body;
             const filter = { mobileNumber: mobileNumber };
             const updateDoc = {
                 $set: {
-                    balance: balance
+                    money: money
                 },
             };
 
@@ -223,6 +223,7 @@ async function run() {
         });
     }
 }
+
 
 run().catch(console.dir);
 
